@@ -10,14 +10,14 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
         supervisor \
-        openssh-server pwgen sudo vim-tiny \
+        openssh-server sudo vim-tiny \
         net-tools \
         lxde x11vnc xvfb \
         gtk2-engines-murrine ttf-ubuntu-font-family \
         nginx \
         python-pip python-dev build-essential \
         mesa-utils libgl1-mesa-dri \
-        gnome-themes-standard gtk2-engines-pixbuf gtk2-engines-murrine pinta \
+        gnome-themes-standard gtk2-engines-pixbuf gtk2-engines-murrine \
         dbus-x11 x11-utils \
     && apt-get autoclean \
     && apt-get autoremove \
