@@ -9,17 +9,38 @@ RUN apt-get update \
     && add-apt-repository ppa:fcwu-tw/ppa \
     && apt-get update \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
-        supervisor \
-        openssh-server sudo vim-tiny \
-        net-tools \
-        lxde x11vnc xvfb \
-        gtk2-engines-murrine ttf-ubuntu-font-family \
-        nginx \
-        python-pip python-dev build-essential \
-        mesa-utils libgl1-mesa-dri \
-        gnome-themes-standard gtk2-engines-pixbuf gtk2-engines-murrine \
-        dbus-x11 x11-utils \
-    && apt-get autoclean \
+        supervisor
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        openssh-server
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        sudo
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        vim-tiny
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        net-tools
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        lxde
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        x11vnc
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        xvfb
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \        
+        nginx
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        python-pip
+RUN apt-get install -y --no-install-recommends \
+        python-dev
+RUN apt-get install -y --no-install-recommends \
+        build-essential
+RUN apt-get install -y --no-install-recommends \
+        mesa-utils
+RUN apt-get install -y --no-install-recommends \
+        libgl1-mesa-dri
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
+        dbus-x11
+RUN apt-get install -y --no-install-recommends \
+        x11-utils
+RUN apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
