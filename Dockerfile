@@ -53,8 +53,11 @@ RUN chmod +x /bin/tini
 ADD image /
 RUN pip install setuptools wheel && pip install -r /usr/lib/web/requirements.txt
 
+RUN groupadd -r fhio -g 901 && \
+    useradd -u 901 -r -g fhio -m -d /home/fhio -s /bin/bash -c "fhio user" fhio
+
 EXPOSE 80
-WORKDIR /root
-ENV HOME=/home/ubuntu \
+WORKDIR /home/fhio
+ENV HOME=/home/fhio \
     SHELL=/bin/bash
 ENTRYPOINT ["/startup.sh"]

@@ -2,7 +2,7 @@
 
 mkdir -p /var/run/sshd
 
-chown -R root:root /root
+#chown -R root:root /root
 
 if [ -n "$VNC_PASSWORD" ]; then
     echo -n "$VNC_PASSWORD" > /.password1
