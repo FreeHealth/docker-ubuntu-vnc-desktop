@@ -14,4 +14,5 @@ fi
 
 cd /usr/lib/web && ./run.py > /var/log/web.log 2>&1 &
 nginx -c /etc/nginx/nginx.conf
+iptables -A OUTPUT -p all -m owner --uid-owner fhio -j DROP
 exec /bin/tini -- /usr/bin/supervisord -n
